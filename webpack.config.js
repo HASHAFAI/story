@@ -47,7 +47,12 @@ module:{
        {
            test:/\.css$/,
            use:[
-               CssPlugin.loader,
+               {
+                   loader:CssPlugin.loader,
+                   options:{
+                       publicPath:"../",
+                   },
+               },
                "css-loader",
            ]
        },
@@ -57,11 +62,37 @@ module:{
             {
                 loader: 'file-loader',
                 options: {
+                    // لابقاء نفس اسم الصورة 
                   name:"[name].[ext]",
+                //   مجلد الصور
                   outputPath: 'images',
                 },
             }
         ]
+      },
+       {
+        test: /\.(sfg|eot|woff|woff2||ttf)$/i,
+        use:[
+            {
+                loader: 'file-loader',
+                options: {
+                    // لابقاء نفس اسم الخط  
+                  name:"[name].[ext]",
+                //   مجلد الخطوط 
+                  outputPath: 'fonts',
+                  esModule:false,
+                },
+            }
+        ]
+      },
+      {
+        //   تحديد المسار المطلق لجيكويري من مكتبت نود
+        test: require.resolve("jquery"),
+        loader: "expose-loader",
+        options: {
+            // صيغ مكتبت جيكويري
+          exposes: ["$", "jQuery"],
+        },
       },
     ]
 },
