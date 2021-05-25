@@ -11,4 +11,6 @@ $(function(){
     $(".add-to-cart-btn").click(function(){
       alert("تم اضافة المنتج بنجاح لعربة التسوق");
     })
-  })
+    // استدعاء السنة الحالية
+    $('#copyright').text(" جميع الحقوق محفوظة للمتجر لسنة " + new Date().getFullYear());
+    })

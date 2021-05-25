@@ -401,3 +401,90 @@ h3.custom-heading {
 	padding-top: 25px
 }
 /* نهاية الماركات العالمية */
+/* Start Footer */
+#brand-logos {
+    background-color: #dbeefa;
+	padding: 25px 0;
+	/* width: 100%; */
+	color: #555555;
+}
+#brand-logos img {
+    margin-left: 25px;
+	margin-right: 25px;
+	max-height: 100px;
+	max-width: 100px;
+}
+#footer-nav {
+    background-color: #1f1e1e;
+    padding: 50px 0 40px;
+    background-image: url(../images/bg_footer_1.png), url(../images/bg_footer_2.png);
+	background-repeat: no-repeat, no-repeat;
+    /* تموضع الصورتين */
+	background-position: 110% 0, -10% -150%
+}
+#footer-nav-links {
+    margin: 30px 0;
+}
+#footer-nav-links a {
+    color: #555555;
+    margin-left: 30px;
+    font-weight: bold;
+}
+#footer-nav-links a:hover {
+    text-decoration: none;
+}
+#footer-nav #newsletter {
+    border-top: 1px solid #292929;
+}
+#footer-nav form {
+	max-width: 260px;
+	margin: auto;
+}
+#footer-nav #newsletter {
+    border-top: 1px solid #292929;
+}
+/* لقلب اتجاه النص في حقول الادخال */
+input[type=email], input[type="number" ]{
+    direction: rtl;
+    text-align: right;
+}
+#footer-nav form label {
+	margin: 27px 0 16px;
+	font-size: 12px;
+    font-weight: bold;
+    color: #555555;
+}
+.custom-btn-primary2{
+    color: #000;
+    background-color: #F8AD47;
+    border: #F8AD47;
+}
+#newsletter form input{
+    background-color: #313131;
+    opacity: .6;
+    height: 38px;
+    border: none;
+}
+#newsletter form button{
+    border-radius: 0px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	font-size: 14px;
+	padding: 6px 12px 5px;
+    /* نفس لون خط الحاوية التي تحتويه */
+    color: inherit;
+    height: 38px;
+}
+#footer-copyright-social {
+    background-color: #151515;
+    color: #303030;
+    padding-top: 30px;
+	padding-bottom: 30px;
+	font-weight: 700;
+}
+#footer-copyright-social a {
+    color: #303030;
+    margin-left: 5px;
+	margin-right: 5px
+}
+/* End Footer */
