@@ -7,4 +7,8 @@ import 'popper.js/dist/popper.min';
 import "./css/style.css";
 $(function(){
     $('[data-toggle="tooltip"]').tooltip()
+
+    $(".add-to-cart-btn").click(function(){
+      alert("تم اضافة المنتج بنجاح لعربة التسوق");
+    })
   })
