@@ -28,7 +28,7 @@ port:1239,
 // لعرض المجلد
 writeToDisk:true,
 // لفتح الصفحة تلقائيا
-// open:true,
+open:true,
 },
 
 module:{
@@ -45,7 +45,8 @@ module:{
            ]
        },
        {
-           test:/\.css$/,
+        //    تحويل ملفات ساس الى سيسس
+           test:/\.(sa|sc|c)ss$/,
            use:[
                {
                    loader:CssPlugin.loader,
@@ -54,9 +55,12 @@ module:{
                    },
                },
                "css-loader",
+            //    يجب ان يكون اسفل css
+               'sass-loader',
            ]
        },
        {
+        //    للتعرف على نوع الصور
         test: /\.(png|svg|jpe?g|gif)$/,
         use:[
             {
@@ -71,6 +75,7 @@ module:{
         ]
       },
        {
+        //    للتعرف على نوع الخطوط
         test: /\.(sfg|eot|woff|woff2||ttf)$/i,
         use:[
             {
@@ -90,7 +95,7 @@ module:{
         test: require.resolve("jquery"),
         loader: "expose-loader",
         options: {
-            // صيغ مكتبت جيكويري
+            //التعرف على صيغ مكتبت جيكويري 
           exposes: ["$", "jQuery"],
         },
       },
@@ -102,6 +107,36 @@ new HtmlPlugin({
     filename:"index.html",
     // مسار الملف الاصلي
     template:"./src/index.html"
+}
+),
+//منشئ الصفحة الثانية صفحة المنتج 
+new HtmlPlugin({
+    filename:"product.html",
+    template:"./src/product.html"
+}
+),
+//منشئ الصفحة الثالثة  صفحة السلة 
+new HtmlPlugin({
+    filename:"checkout.html",
+    template:"./src/checkout.html"
+}
+),
+//منشئ الصفحة الرابعة  صفحة اتمام الشراء 
+new HtmlPlugin({
+    filename:"payment.html",
+    template:"./src/payment.html"
+}
+),
+//منشئ الصفحة الخامسة  صفحة البحث المتقدم 
+new HtmlPlugin({
+    filename:"search.html",
+    template:"./src/search.html"
+}
+),
+//nمنشئ الصفحة السادسة  صفحة البحث المتقدم 
+new HtmlPlugin({
+    filename:"contact.html",
+    template:"./src/contact.html"
 }
 ),
 new CssPlugin({
